@@ -8,10 +8,10 @@ function Pokemon(partyPosition) {
         let hpPercent = 100 * (mon.hp / mon.maxHP)
         let hpColor
 
-        if (hpPercent >= 50) {
+        if (hpPercent > 50) {
             hpColor = "#33cc33";
         }
-        else if (hpPercent >= 20) {
+        else if (hpPercent > 20) {
             hpColor = "#ffcc00";
         }
         else {
