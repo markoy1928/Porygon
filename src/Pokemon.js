@@ -1,59 +1,6 @@
 import React from "react";
 import data from "./game_data.json";
-
-function getGame() {
-    switch (data.game) {
-        case "RB":
-            return "red-blue";
-
-        case "Y":
-            return "yellow";
-
-        case "GS":
-            return "gold";
-
-        case "C":
-            return "crystal";
-
-        case "RS":
-            return "ruby-sapphire";
-
-        case "E":
-            return "emerald";
-
-        case "FRLG":
-            return "firered-leafgreen";
-
-        case "DP":
-            return "diamond-pearl";
-
-        case "PT":
-            return "platinum";
-
-        case "HGSS":
-            return "heartgold-soulsilver";
-
-        case "BW":
-            return "black-white";
-
-        case "B2W2":
-            return "black-white";
-
-        case "XY":
-            return "x-y";
-
-        case "ORAS":
-            return "omega-ruby-alpha-sapphire";
-
-        case "SM":
-            return "sun-moon";
-
-        case "USUM":
-            return "ultra-sun-ultra-moon";
-        default:
-            return "platinum"
-    }
-}
+import PokemonURL from "./PokemonURL.js";
 
 function Pokemon(partyPosition) {
     let mon = data.party[partyPosition];
@@ -72,7 +19,7 @@ function Pokemon(partyPosition) {
             hpColor = "#cc0000";
         }
 
-        let imgURL = "https://img.pokemondb.net/sprites/" + getGame() + "/normal/cyndaquil.png"
+        let imgURL = PokemonURL(data.game, mon);
 
         return (
             <div class="Pokemon">
